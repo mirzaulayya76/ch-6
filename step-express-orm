@@ -1,0 +1,15 @@
+step-step implementasi ORM ke Express: (menggunakan prisma)
+
+1. buat folder
+2. masuk ke folder, lalu "npm init -y"
+3. instal express => "npm i express"
+4. instal nodemon (sebagai devDependencies) => "npm i nodemon -D"
+5. konfigurasi pada package.json untuk nodemon => "scripts": "dev": "nodemon main.js"
+6. test nodemon menggunakan console.log
+7. buat konfigurasi pada "main.js"
+8. Buat CRUD User yang terkoneksi ke database:
+
+*
+8.a. endpoint GET /user => user's list
+8.b endpoint GET /user/:id => milih 1 user
+8.c endpoint POST /user => buat user
