@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/update-user.css" rel="stylesheet">
+    <title>Edit Account Page</title>
+</head>
+<body>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>
+                Edit Your Games Account Here
+            </h1>
+            <form action="/user/update" method="post">
+                <input type="hidden" name="id" value="<%= users.id %>">
+            <input
+             name="username" 
+             placeholder="Your Username"
+             value="<%= users.username %>"
+            >
+            <br>
+            <br>
+            <input
+             name="password" 
+             placeholder="Your Password"
+             value="<%= users.password %>"
+            >
+            <br>
+            <br>
+            <button>
+                <strong>
+                    Edit Account
+                </strong>
+            </button>
+            </form>
+            <br>
+            <br>
+            <a href="/userlist">
+                <strong>
+                    🔙 Go back to User Lists Page
+                </strong>
+            </a>
+        </section>
+    </main>
+</body>
+</html>

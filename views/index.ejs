@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/index.css" rel="stylesheet">
+    <title>User's List Games</title>
+</head>
+<body>
+  <header>
+  </header>
+    <main>
+      <section>
+        <h1>
+          User Games List 
+        </h1>
+
+        
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+        <th>
+          Username
+        </th>
+        <th>
+          Password
+        </th>
+      </tr>
+
+      <% users.forEach (function (users) { %>
+        <tr>
+          <td>
+            <%= users.id %> 
+          </td>
+          <td>
+            <%= users.username %>
+            <td>
+          <td>
+            <%= users.password %>
+          </td>
+          <td>
+            <a href="/user/update/<%= users.id %>">
+              <button>
+                Edit
+              </button>
+            </a>
+            <button class="delete-button" data-gamesid="<%= users.id %>">
+              Delete
+            </button>
+          </td>
+        </tr> 
+      <% }); %>
+  
+      
+    </table>
+    <a href="/user/login">
+      <strong>
+        LOG OUT
+      </strong>
+    </a>
+      </section>
+    </main>
+
+
+    
+
+</body>
+<script>
+    const buttons = document.querySelectorAll('.delete-button')
+    buttons.forEach((button) => {
+      button.addEventListener('click', async () => {
+
+        // Memanggil fungsi delete:
+        const id = button.dataset.gamesid
+
+        const deleteQuestion = window.confirm('Are you sure to delete this username?')
+        if (deleteQuestion){
+           await fetch(`/user/${id}`, { method: 'delete' });
+           window.location.reload();
+          }
+      })
+    })
+</script>
+</html>

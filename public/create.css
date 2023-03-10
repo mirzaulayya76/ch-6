@@ -1,0 +1,12 @@
+a:link {
+    text-decoration: none;
+}
+a {
+    color: inherit;
+    font-size: large;
+}
+body {
+    background-color: burlywood;
+    color: white;
+    align-items: center;
+}
